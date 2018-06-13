@@ -18,11 +18,12 @@
         http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+http://mybatis.org/schema/mybatis-spring ">
 
     <!--<context:property-placeholder location="classpath:datasource.properties"/>-->
 
-<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass">
             <value>com.mysql.jdbc.Driver</value>
         </property>
@@ -71,7 +72,7 @@
     </bean>-->
 
     <!--这三行有啥用-->
-<!--    <task:annotation-driven />
+    <!--    <task:annotation-driven />
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <context:property-placeholder location="classpath:datasource.properties"/>-->
 
@@ -80,7 +81,8 @@
         <property name="poolProperties">
             <bean class="org.apache.tomcat.jdbc.pool.PoolProperties">
                 <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://47.93.242.215:3306/fire_database?useUnicode=true&amp;characterEncoding=utf8"/>
+                <property name="url"
+                          value="jdbc:mysql://47.93.242.215:3306/cncfapp_database?useUnicode=true&amp;characterEncoding=utf8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="xmc117014"/>
                 <property name="jmxEnabled" value="true"/>
@@ -97,7 +99,8 @@
                 <property name="maxIdle" value="50"/>
                 <property name="minIdle" value="2"/>
                 <property name="logAbandoned" value="false"/>
-                <property name="jdbcInterceptors" value="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"/>
+                <property name="jdbcInterceptors"
+                          value="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"/>
             </bean>
         </property>
     </bean>
@@ -110,7 +113,7 @@
                 <value>classpath*:com/cncf/dao/*Mapper.xml</value>
             </list>
         </property>
-<!--        <property name="plugins">
+        <!--        <property name="plugins">
 		    <array>
 		      <bean class="com.github.pagehelper.PageInterceptor">
 		        <property name="properties">
@@ -136,7 +139,7 @@
           p:dataSource-ref="dataSource"/>
 
     <!-- 配置通知 -->
-<!--    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+    <!--    <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="add*" propagation="REQUIRED"/>
             <tx:method name="publish" propagation="REQUIRED"/>

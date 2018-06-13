@@ -28,16 +28,17 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/user/user/updateProfile"/>
-            <mvc:mapping path="/user/leaveMessage/**"/>
-            <mvc:mapping path="/user/leaveMessage/getCaptcha"/>
+            <mvc:mapping path="/user/getUserInformation"/>
+            <mvc:mapping path="/user/getFireInformation"/>
+            <mvc:mapping path="/user/rejectFireInformation"/>
+            <mvc:mapping path="/user/reportFireInformation"/>
+            <mvc:mapping path="/user/getFireInformationHistory"/>
 
-            <mvc:exclude-mapping path="/user/leaveMessage/selectAllLeaveMessageByPage"/>
 
             <bean class="com.cncf.interceptor.AccessTokenValidationInterceptor"/>
         </mvc:interceptor>
 
-        <mvc:interceptor>
+<!--        <mvc:interceptor>
             <mvc:mapping path="/btc/cms/insertCms"/>
             <mvc:mapping path="/btc/cms/deleteCms/*"/>
             <mvc:mapping path="/btc/cms/updateCms"/>
@@ -47,24 +48,24 @@
             <mvc:mapping path="/btc/btcm/logout/*"/>
 
             <bean class="com.cncf.interceptor.BtcmAccessTokenValidationInterceptor"/>
-        </mvc:interceptor>
-
+        </mvc:interceptor>-->
+<!--
         <mvc:interceptor>
             <mvc:mapping path="/manage/**"/>
 
             <mvc:exclude-mapping path="/manage/admin/login"/>
             <mvc:exclude-mapping path="/manage/admin/regist"/>
 
-            <!--下面这个方法管理员和委员都需要访问，所以在这里排除拦截。
+            &lt;!&ndash;下面这个方法管理员和委员都需要访问，所以在这里排除拦截。
             同时又不允许用户访问避免恶意访问，所以在进入这个方法后要进行。
             为什么不在btc和manage包中分别添加一个方法呢？因为发布文章的这个模块是用的
-            manage中的接口，这个模块只是授权给委员访问。-->
+            manage中的接口，这个模块只是授权给委员访问。&ndash;&gt;
             <mvc:exclude-mapping path="/manage/category/selectAllCategory"/>
             <mvc:exclude-mapping path="/swagger/**"/>
             <mvc:exclude-mapping path="/api-docs/**"/>
 
             <bean class="com.cncf.interceptor.AdminAccessTokenValidationInterceptor"/>
-        </mvc:interceptor>
+        </mvc:interceptor>-->
 
 <!--        <mvc:interceptor>
             <mvc:mapping path="/manage/**" />
@@ -79,6 +80,40 @@
 
 
     </mvc:interceptors>
+
+    <!-- mvc校验器 -->
+    <bean id="validator"
+          class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService" validator="validator">
+        <mvc:message-converters register-defaults="true">
+            <bean
+                    class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.cncf.util.StringToEnumConverterFactory"/>
+            </set>
+        </property>
+    </bean>
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
