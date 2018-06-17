@@ -5,8 +5,8 @@
 2017-10-13 13:38:52 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.class]
 2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.class]
-2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.cncf.dao.AdminDao' mapperInterface
-2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.cncf.dao.ArticleDao' mapperInterface
+2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.starServer.dao.AdminDao' mapperInterface
+2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.starServer.dao.ArticleDao' mapperInterface
 2017-10-13 13:38:52 [INFO] -[org.springframework.context.support.PropertySourcesPlaceholderConfigurer] Loading properties file from class path resource [properties/datasource.properties]
 2017-10-13 13:38:52 [INFO] -[org.springframework.context.support.PropertySourcesPlaceholderConfigurer] Loading properties file from class path resource [properties/datasource.properties]
 2017-10-13 13:38:52 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
@@ -15,17 +15,17 @@
 2017-10-13 13:38:52 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Registered plugin: 'com.github.pagehelper.PageInterceptor@897a81b'
 2017-10-13 13:38:53 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.xml]'
 2017-10-13 13:38:53 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.xml]'
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.cncf.entity.Admin com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.starServer.entity.Admin com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 13:38:51 CST 2017]; root of context hierarchy
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 13:38:51 CST 2017]; root of context hierarchy
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -42,17 +42,17 @@
 2017-10-13 13:38:53 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 13:38:53 [INFO] -[org.springframework.context.support.PropertySourcesPlaceholderConfigurer] Loading properties file from class path resource [properties/datasource.properties]
 2017-10-13 13:38:53 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.cncf.entity.Admin com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.starServer.entity.Admin com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 13:38:53 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 13:38:53 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -64,21 +64,21 @@
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.html] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#6'
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.js] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#7'
 2017-10-13 13:38:53 [INFO] -[org.springframework.web.servlet.DispatcherServlet] FrameworkServlet 'mvc-dispatcher': initialization completed in 147 ms
-2017-10-13 13:42:24 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 13:42:24 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 13:42:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 13:42:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b1f77ac] was not registered for synchronization because synchronization is not active
 2017-10-13 13:42:24 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [ProxyConnection[PooledConnection[com.mysql.jdbc.JDBC4Connection@51f613ab]]] will not be managed by Spring
-2017-10-13 13:42:24 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? ) 
-2017-10-13 13:42:24 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
+2017-10-13 13:42:24 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? )
+2017-10-13 13:42:24 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
 2017-10-13 13:42:24 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
 2017-10-13 13:42:24 [INFO] -[org.springframework.jdbc.support.SQLErrorCodesFactory] SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
 2017-10-13 13:42:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b1f77ac]
-2017-10-13 13:44:07 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 13:44:07 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 13:44:07 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 13:44:07 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60b8b2e3] was not registered for synchronization because synchronization is not active
 2017-10-13 13:44:07 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [ProxyConnection[PooledConnection[com.mysql.jdbc.JDBC4Connection@51f613ab]]] will not be managed by Spring
-2017-10-13 13:44:07 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? ) 
-2017-10-13 13:44:07 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
+2017-10-13 13:44:07 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? )
+2017-10-13 13:44:07 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
 2017-10-13 13:44:07 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60b8b2e3]
 2017-10-13 15:23:44 [INFO] -[org.springframework.web.context.support.XmlWebApplicationContext] Closing WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 13:38:53 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:23:44 [INFO] -[org.springframework.web.context.support.XmlWebApplicationContext] Closing Root WebApplicationContext: startup date [Fri Oct 13 13:38:51 CST 2017]; root of context hierarchy
@@ -89,8 +89,8 @@
 2017-10-13 15:23:57 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.class]
 2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.class]
-2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.cncf.dao.AdminDao' mapperInterface
-2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.cncf.dao.ArticleDao' mapperInterface
+2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.starServer.dao.AdminDao' mapperInterface
+2017-10-13 15:23:57 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.starServer.dao.ArticleDao' mapperInterface
 2017-10-13 15:23:57 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 2017-10-13 15:23:58 [INFO] -[com.mchange.v2.log.MLog] MLog clients using slf4j logging.
 2017-10-13 15:23:58 [DEBUG] -[com.mchange.v2.log.MLog] Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
@@ -121,17 +121,17 @@
 2017-10-13 15:23:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] awaitAvailable(): [unknown]
 2017-10-13 15:23:59 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.xml]'
 2017-10-13 15:23:59 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.xml]'
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.cncf.entity.Admin com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.starServer.entity.Admin com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 15:23:57 CST 2017]; root of context hierarchy
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 15:23:57 CST 2017]; root of context hierarchy
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -147,17 +147,17 @@
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.context.support.XmlWebApplicationContext] Refreshing WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:23:59 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:23:59 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 15:23:59 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.cncf.entity.Admin com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.starServer.entity.Admin com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:23:59 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:23:59 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -169,13 +169,13 @@
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.html] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#6'
 2017-10-13 15:23:59 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.js] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#7'
 2017-10-13 15:24:00 [INFO] -[org.springframework.web.servlet.DispatcherServlet] FrameworkServlet 'mvc-dispatcher': initialization completed in 194 ms
-2017-10-13 15:24:05 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:24:05 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:24:05 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:24:05 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@437e182a] was not registered for synchronization because synchronization is not active
 2017-10-13 15:24:05 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@23aa4c8c [wrapping: com.mysql.jdbc.JDBC4Connection@5b62b3bd]] will not be managed by Spring
-2017-10-13 15:24:05 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? ) 
-2017-10-13 15:24:05 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
-2017-10-13 15:24:05 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] <==    Updates: 1
+2017-10-13 15:24:05 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? )
+2017-10-13 15:24:05 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
+2017-10-13 15:24:05 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] <==    Updates: 1
 2017-10-13 15:24:05 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@437e182a]
 2017-10-13 15:24:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 15:24:58 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@6e4de0e2]
 2017-10-13 15:24:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@6e4de0e2]
@@ -588,12 +588,12 @@
 2017-10-13 15:33:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 15:33:13 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@6e4de0e2]
 2017-10-13 15:33:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@6e4de0e2]
 2017-10-13 15:33:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] FINISHED check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@6e4de0e2]
-2017-10-13 15:33:20 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:33:20 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:33:20 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:33:20 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c94ef1c] was not registered for synchronization because synchronization is not active
 2017-10-13 15:33:20 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@166c846c [wrapping: com.mysql.jdbc.JDBC4Connection@1d0845d5]] will not be managed by Spring
-2017-10-13 15:33:20 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? ) 
-2017-10-13 15:33:20 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
+2017-10-13 15:33:20 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? )
+2017-10-13 15:33:20 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
 2017-10-13 15:33:20 [DEBUG] -[com.mchange.v2.c3p0.impl.NewPooledConnection] com.mchange.v2.c3p0.impl.NewPooledConnection@37c063e9 handling a throwable.
 com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'zj' for key 'adminName'
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -640,8 +640,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -731,8 +731,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -822,8 +822,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1161,12 +1161,12 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:39:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@6f1ac859
 2017-10-13 15:39:28 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@2cdb19a5
 2017-10-13 15:39:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@2cdb19a5
-2017-10-13 15:39:34 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:39:34 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:39:34 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:39:34 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7328bdf0] was not registered for synchronization because synchronization is not active
 2017-10-13 15:39:34 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@77b72adc [wrapping: com.mysql.jdbc.JDBC4Connection@20c186bf]] will not be managed by Spring
-2017-10-13 15:39:34 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? ) 
-2017-10-13 15:39:34 [DEBUG] -[com.cncf.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
+2017-10-13 15:39:34 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==>  Preparing: insert into admin( adminId, adminName, password ) VALUES ( ?, ?, ? )
+2017-10-13 15:39:34 [DEBUG] -[com.starServer.dao.AdminDao.saveAdmin] ==> Parameters: 0(Integer), zj(String), 123(String)
 2017-10-13 15:39:34 [DEBUG] -[com.mchange.v2.c3p0.impl.NewPooledConnection] com.mchange.v2.c3p0.impl.NewPooledConnection@32773912 handling a throwable.
 com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'zj' for key 'adminName'
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -1213,8 +1213,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1304,8 +1304,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1395,8 +1395,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:51)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
 	at com.sun.proxy.$Proxy22.saveAdmin(Unknown Source)
-	at com.cncf.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
-	at com.cncf.controller.manage.AdminController.regist(AdminController.java:70)
+	at com.starServer.service.impl.AdminServiceImpl.saveAdmin(AdminServiceImpl.java:24)
+	at com.starServer.controller.manage.AdminController.regist(AdminController.java:70)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1452,8 +1452,8 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:39:57 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.class]
 2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Identified candidate component class: file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.class]
-2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.cncf.dao.AdminDao' mapperInterface
-2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.cncf.dao.ArticleDao' mapperInterface
+2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'adminDao' and 'com.starServer.dao.AdminDao' mapperInterface
+2017-10-13 15:39:58 [DEBUG] -[org.mybatis.spring.mapper.MapperScannerConfigurer$Scanner] Creating MapperFactoryBean with name 'articleDao' and 'com.starServer.dao.ArticleDao' mapperInterface
 2017-10-13 15:39:58 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 2017-10-13 15:39:58 [INFO] -[com.mchange.v2.log.MLog] MLog clients using slf4j logging.
 2017-10-13 15:39:58 [DEBUG] -[com.mchange.v2.log.MLog] Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
@@ -1484,17 +1484,17 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:39:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] awaitAvailable(): [unknown]
 2017-10-13 15:39:59 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\AdminDao.xml]'
 2017-10-13 15:39:59 [DEBUG] -[org.mybatis.spring.SqlSessionFactoryBean] Parsed mapper file: 'file [D:\Ideal\workspace\FireServer\target\FireServer\WEB-INF\classes\com\cncf\dao\ArticleDao.xml]'
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
 2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 15:39:57 CST 2017]; root of context hierarchy
 2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Fri Oct 13 15:39:57 CST 2017]; root of context hierarchy
 2017-10-13 15:39:59 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -1510,17 +1510,17 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.context.support.XmlWebApplicationContext] Refreshing WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:40:00 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:40:00 [INFO] -[org.springframework.beans.factory.xml.XmlBeanDefinitionReader] Loading XML bean definitions from class path resource [mvc-dispatcher-servlet.xml]
 2017-10-13 15:40:00 [INFO] -[org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.test()
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.cncf.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.AdminController.regist(com.cncf.entity.Admin)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.insertArticle(com.cncf.entity.Article)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.deleteById(int)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateArticle(com.cncf.entity.Article)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.cncf.controller.manage.ArticleController.selectByType(java.lang.String)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.selectTitleById(int)
-2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.cncf.controller.manage.ArticleController.updateContentById(int,java.lang.String)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/test],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.test()
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.starServer.controller.manage.AdminController.logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/admin/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.AdminController.regist(com.starServer.entity.Admin)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/insertArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.insertArticle(com.starServer.entity.Article)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateTitleById(int,java.lang.String)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/deleteById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.deleteById(int)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateArticle],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateArticle(com.starServer.entity.Article)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectByType],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List com.starServer.controller.manage.ArticleController.selectByType(java.lang.String)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/selectTitleById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.selectTitleById(int)
+2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/ArticleController/updateContentById],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.starServer.controller.manage.ArticleController.updateContentById(int,java.lang.String)
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:40:00 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: WebApplicationContext for namespace 'mvc-dispatcher-servlet': startup date [Fri Oct 13 15:40:00 CST 2017]; parent: Root WebApplicationContext
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/swagger/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
@@ -1532,13 +1532,13 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.html] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#6'
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/*.js] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#7'
 2017-10-13 15:40:00 [INFO] -[org.springframework.web.servlet.DispatcherServlet] FrameworkServlet 'mvc-dispatcher': initialization completed in 201 ms
-2017-10-13 15:40:34 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:40:34 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:40:34 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:40:34 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@188438c3] was not registered for synchronization because synchronization is not active
 2017-10-13 15:40:34 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@62355619 [wrapping: com.mysql.jdbc.JDBC4Connection@34ffaf5e]] will not be managed by Spring
-2017-10-13 15:40:34 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 15:40:35 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 15:40:35 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 15:40:34 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 15:40:35 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 15:40:35 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 15:40:35 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@188438c3]
 2017-10-13 15:40:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 15:40:58 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 15:40:58 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
@@ -1842,21 +1842,21 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:46:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@51bfa862] on IDLE CHECK has SUCCEEDED.
 2017-10-13 15:46:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@4ba63b58] on IDLE CHECK has SUCCEEDED.
 2017-10-13 15:46:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@14df63c3] on IDLE CHECK has SUCCEEDED.
-2017-10-13 15:47:00 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:47:00 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:47:00 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:47:00 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4665ad11] was not registered for synchronization because synchronization is not active
 2017-10-13 15:47:00 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@4c9dc661 [wrapping: com.mysql.jdbc.JDBC4Connection@71fc1715]] will not be managed by Spring
-2017-10-13 15:47:00 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 15:47:00 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 15:47:00 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 15:47:00 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 15:47:00 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 15:47:00 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 15:47:00 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4665ad11]
-2017-10-13 15:47:06 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:47:06 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:47:06 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:47:06 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5be55bf5] was not registered for synchronization because synchronization is not active
 2017-10-13 15:47:06 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@511d3085 [wrapping: com.mysql.jdbc.JDBC4Connection@71fc1715]] will not be managed by Spring
-2017-10-13 15:47:06 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 15:47:06 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 15:47:06 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 15:47:06 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 15:47:06 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 15:47:06 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 15:47:06 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5be55bf5]
 2017-10-13 15:47:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 15:47:13 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 15:47:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
@@ -2149,13 +2149,13 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 15:53:13 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Preparing to destroy PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@4fc37529
 2017-10-13 15:53:13 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@4fc37529
 2017-10-13 15:53:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@4fc37529
-2017-10-13 15:53:17 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 15:53:17 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 15:53:17 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 15:53:17 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533d4a78] was not registered for synchronization because synchronization is not active
 2017-10-13 15:53:17 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@3d727568 [wrapping: com.mysql.jdbc.JDBC4Connection@295eff26]] will not be managed by Spring
-2017-10-13 15:53:17 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 15:53:17 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 15:53:17 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 15:53:17 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 15:53:17 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 15:53:17 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 15:53:17 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533d4a78]
 2017-10-13 15:53:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 15:53:28 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 15:53:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
@@ -2518,13 +2518,13 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 16:00:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@75933727] on IDLE CHECK has SUCCEEDED.
 2017-10-13 16:00:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@471f1481] on IDLE CHECK has SUCCEEDED.
 2017-10-13 16:00:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@1b1df335] on IDLE CHECK has SUCCEEDED.
-2017-10-13 16:01:11 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 16:01:11 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 16:01:11 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 16:01:11 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e081fb] was not registered for synchronization because synchronization is not active
 2017-10-13 16:01:11 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@89bf906 [wrapping: com.mysql.jdbc.JDBC4Connection@6e86ebe]] will not be managed by Spring
-2017-10-13 16:01:11 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 16:01:11 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 16:01:11 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 16:01:11 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 16:01:11 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 16:01:11 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 16:01:11 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78e081fb]
 2017-10-13 16:01:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 16:01:13 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 16:01:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
@@ -2573,13 +2573,13 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 16:01:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@c0e9ec9] on IDLE CHECK has SUCCEEDED.
 2017-10-13 16:01:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@5d66f6a5] on IDLE CHECK has SUCCEEDED.
 2017-10-13 16:01:58 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@5eafe092] on IDLE CHECK has SUCCEEDED.
-2017-10-13 16:02:09 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 16:02:09 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 16:02:09 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 16:02:09 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a8b49f4] was not registered for synchronization because synchronization is not active
 2017-10-13 16:02:09 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@30732284 [wrapping: com.mysql.jdbc.JDBC4Connection@2c04f8fb]] will not be managed by Spring
-2017-10-13 16:02:09 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 16:02:09 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 16:02:09 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 16:02:09 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 16:02:09 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 16:02:09 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 16:02:09 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3a8b49f4]
 2017-10-13 16:02:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 16:02:13 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 16:02:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
@@ -2590,13 +2590,13 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Dupl
 2017-10-13 16:02:13 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Preparing to destroy PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@6a4f5616
 2017-10-13 16:02:13 [DEBUG] -[com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool] Successfully destroyed PooledConnection: com.mchange.v2.c3p0.impl.NewPooledConnection@6a4f5616
 2017-10-13 16:02:13 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Successfully destroyed resource: com.mchange.v2.c3p0.impl.NewPooledConnection@6a4f5616
-2017-10-13 16:02:24 [INFO] -[com.cncf.controller.manage.AdminController] regist called
+2017-10-13 16:02:24 [INFO] -[com.starServer.controller.manage.AdminController] regist called
 2017-10-13 16:02:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
 2017-10-13 16:02:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13c096f7] was not registered for synchronization because synchronization is not active
 2017-10-13 16:02:24 [DEBUG] -[org.mybatis.spring.transaction.SpringManagedTransaction] JDBC Connection [com.mchange.v2.c3p0.impl.NewProxyConnection@4b5ef8b7 [wrapping: com.mysql.jdbc.JDBC4Connection@501a93aa]] will not be managed by Spring
-2017-10-13 16:02:24 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ? 
-2017-10-13 16:02:24 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
-2017-10-13 16:02:24 [DEBUG] -[com.cncf.dao.AdminDao.getAdminByName] <==      Total: 1
+2017-10-13 16:02:24 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==>  Preparing: SELECT adminId, adminName, password FROM admin WHERE adminName = ?
+2017-10-13 16:02:24 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] ==> Parameters: zj(String)
+2017-10-13 16:02:24 [DEBUG] -[com.starServer.dao.AdminDao.getAdminByName] <==      Total: 1
 2017-10-13 16:02:24 [DEBUG] -[org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@13c096f7]
 2017-10-13 16:02:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] Checking for expired resources - Fri Oct 13 16:02:28 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]
 2017-10-13 16:02:28 [DEBUG] -[com.mchange.v2.resourcepool.BasicResourcePool] BEGIN check for expired resources.  [com.mchange.v2.resourcepool.BasicResourcePool@4b828717]

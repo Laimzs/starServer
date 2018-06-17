@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <bean id="cacheManager" class="cache.JedisCacheManager">
+        <!-- 是否事务环绕的，如果true，则如果事务回滚，缓存也回滚，默认false -->
+        <property name="caches">
+            <set>
+                <!-- 用微信js-sdk相关的accessToken以及ticket信息 -->
+                <bean class="cache.RedisSpringCache" id="wxRedisSpringCache">
+                    <property name="name" value="wxAccessToken"/>
+                    <!-- 默认是2个小时 7200s但是考虑到sdk通信的时间差减少30s来保证缓存始终有效 -->
+                    <property name="expiredDuration" value="7170"/>
+                    <property name="redisTemplate" ref="redisTemplate"></property>
+                </bean>
+
+            </set>
+        </property>
+    </bean>
+
+</beans>
