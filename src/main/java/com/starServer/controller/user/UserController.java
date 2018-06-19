@@ -5,6 +5,8 @@ import com.starServer.entity.ResponseData;
 import com.starServer.entity.User;
 import com.starServer.service.UserService;
 import com.starServer.util.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,13 +23,14 @@ import java.util.Date;
 /**
  * Created by zhangsong on 2018/1/1.
  */
+@Api(value = "Admin", description = "权限管理接口")
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
     @Autowired
     UserService userService;
-
+    @ApiOperation(value = "登录", notes = "")
     //获取手机验证码
     @RequestMapping(value = "/getVerifyCodeByMobile", method = {RequestMethod.POST})
     @ResponseBody

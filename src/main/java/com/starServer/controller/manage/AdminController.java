@@ -7,10 +7,10 @@ import com.starServer.entity.vo.LoginResponseVo;
 import com.starServer.service.AdminService;
 import com.starServer.util.StringUtil;
 import com.starServer.util.Util;
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 
-import com.wordnik.swagger.annotations.ApiParam;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
@@ -36,7 +36,6 @@ public class AdminController {
     private AdminService adminService;
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
-
     @ApiOperation(value = "登录", notes = "")
     @RequestMapping(value = "/auth", method = {RequestMethod.POST})
     @ResponseBody
