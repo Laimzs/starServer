@@ -1,34 +1,51 @@
 package com.starServer.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class User {
     private Integer id;
 
-    private String name;
-
-    private String company;
-
-    private String job;
-
-    private String phone;
+    private String nickName;
 
     private String accessToken;
 
-    private String verifyCode;
+    private String sex;
+
+    private String headImgUrl;
+
+    private String wxUnionId;
 
     private Date createTime;
 
     private Date updateTime;
 
+    private String mobile;
+
+    private String verifyCode;
+
     private Date expireTime;
 
-    private Integer level=1;
+    private String password;
 
-    private String passWord;
+    private String city;
+
+    private Integer followerCount;
+
+    private Integer followeeCount;
+
+    private Integer likeCount;
 
     private Integer valid;
+
+    private String deviceToken;
+
+    private Integer topValue;
+
+    private String signature;
+
+    private Date birthday;
+
+    private String iosDeviceToken;
 
     public Integer getId() {
         return id;
@@ -38,36 +55,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company == null ? null : company.trim();
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job == null ? null : job.trim();
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
     }
 
     public String getAccessToken() {
@@ -78,12 +71,28 @@ public class User implements Serializable {
         this.accessToken = accessToken == null ? null : accessToken.trim();
     }
 
-    public String getVerifyCode() {
-        return verifyCode;
+    public String getSex() {
+        return sex;
     }
 
-    public void setVerifyCode(String verifyCode) {
-        this.verifyCode = verifyCode == null ? null : verifyCode.trim();
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getHeadImgUrl() {
+        return headImgUrl;
+    }
+
+    public void setHeadImgUrl(String headImgUrl) {
+        this.headImgUrl = headImgUrl == null ? null : headImgUrl.trim();
+    }
+
+    public String getWxUnionId() {
+        return wxUnionId;
+    }
+
+    public void setWxUnionId(String wxUnionId) {
+        this.wxUnionId = wxUnionId == null ? null : wxUnionId.trim();
     }
 
     public Date getCreateTime() {
@@ -102,6 +111,22 @@ public class User implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
+    }
+
+    public String getVerifyCode() {
+        return verifyCode;
+    }
+
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode == null ? null : verifyCode.trim();
+    }
+
     public Date getExpireTime() {
         return expireTime;
     }
@@ -110,20 +135,44 @@ public class User implements Serializable {
         this.expireTime = expireTime;
     }
 
-    public Integer getLevel() {
-        return level;
+    public String getPassword() {
+        return password;
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getCity() {
+        return city;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord == null ? null : passWord.trim();
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
+    }
+
+    public Integer getFollowerCount() {
+        return followerCount;
+    }
+
+    public void setFollowerCount(Integer followerCount) {
+        this.followerCount = followerCount;
+    }
+
+    public Integer getFolloweeCount() {
+        return followeeCount;
+    }
+
+    public void setFolloweeCount(Integer followeeCount) {
+        this.followeeCount = followeeCount;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
     }
 
     public Integer getValid() {
@@ -132,5 +181,45 @@ public class User implements Serializable {
 
     public void setValid(Integer valid) {
         this.valid = valid;
+    }
+
+    public String getDeviceToken() {
+        return deviceToken;
+    }
+
+    public void setDeviceToken(String deviceToken) {
+        this.deviceToken = deviceToken == null ? null : deviceToken.trim();
+    }
+
+    public Integer getTopValue() {
+        return topValue;
+    }
+
+    public void setTopValue(Integer topValue) {
+        this.topValue = topValue;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature == null ? null : signature.trim();
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getIosDeviceToken() {
+        return iosDeviceToken;
+    }
+
+    public void setIosDeviceToken(String iosDeviceToken) {
+        this.iosDeviceToken = iosDeviceToken == null ? null : iosDeviceToken.trim();
     }
 }

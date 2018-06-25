@@ -1,4 +1,4 @@
-package com.starServer.entity;
+package com.starServer.entity.response;
 
 
 

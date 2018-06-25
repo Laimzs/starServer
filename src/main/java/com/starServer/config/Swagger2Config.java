@@ -30,9 +30,9 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("暖音App APIs")
+                .title("明星大全 APIs")
                 .description("RestFul风格接口文档")
-                .termsOfServiceUrl("http://www.warmtale.com")
+                .termsOfServiceUrl("www.zs1996.com")
                 .version("1.0.0")
                 .build();
     }

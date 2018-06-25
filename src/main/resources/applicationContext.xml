@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.starServer.controller"/>
     <context:component-scan base-package="com.starServer.dao" />
     <context:component-scan base-package="com.starServer.service" />
-    <context:component-scan base-package="com.starServer.service" />
+    <context:component-scan base-package="com.starServer.config" />
 
 
     <!-- 设置扫描位置 -->

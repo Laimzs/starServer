@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.starServer.dao.StarMapper" >
+  <resultMap id="BaseResultMap" type="com.starServer.entity.Star" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="star_name" property="starName" jdbcType="VARCHAR" />
+    <result column="name_initials" property="nameInitials" jdbcType="VARCHAR" />
+    <result column="film_content" property="filmContent" jdbcType="VARCHAR" />
+    <result column="tv_play_content" property="tvPlayContent" jdbcType="VARCHAR" />
+    <result column="trembling_content" property="tremblingContent" jdbcType="VARCHAR" />
+    <result column="extre_content" property="extreContent" jdbcType="VARCHAR" />
+    <result column="star_head_img" property="starHeadImg" jdbcType="VARCHAR" />
+    <result column="star_portrait" property="starPortrait" jdbcType="VARCHAR" />
+    <result column="like_count" property="likeCount" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, star_name, name_initials, film_content, tv_play_content, trembling_content, extre_content, 
+    star_head_img, star_portrait, like_count
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.starServer.entity.StarExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from star
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from star
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from star
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.starServer.entity.StarExample" >
+    delete from star
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.starServer.entity.Star" >
+    insert into star (id, star_name, name_initials, 
+      film_content, tv_play_content, trembling_content, 
+      extre_content, star_head_img, star_portrait, 
+      like_count)
+    values (#{id,jdbcType=INTEGER}, #{starName,jdbcType=VARCHAR}, #{nameInitials,jdbcType=VARCHAR}, 
+      #{filmContent,jdbcType=VARCHAR}, #{tvPlayContent,jdbcType=VARCHAR}, #{tremblingContent,jdbcType=VARCHAR}, 
+      #{extreContent,jdbcType=VARCHAR}, #{starHeadImg,jdbcType=VARCHAR}, #{starPortrait,jdbcType=VARCHAR}, 
+      #{likeCount,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starServer.entity.Star" >
+    insert into star
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="starName != null" >
+        star_name,
+      </if>
+      <if test="nameInitials != null" >
+        name_initials,
+      </if>
+      <if test="filmContent != null" >
+        film_content,
+      </if>
+      <if test="tvPlayContent != null" >
+        tv_play_content,
+      </if>
+      <if test="tremblingContent != null" >
+        trembling_content,
+      </if>
+      <if test="extreContent != null" >
+        extre_content,
+      </if>
+      <if test="starHeadImg != null" >
+        star_head_img,
+      </if>
+      <if test="starPortrait != null" >
+        star_portrait,
+      </if>
+      <if test="likeCount != null" >
+        like_count,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="starName != null" >
+        #{starName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameInitials != null" >
+        #{nameInitials,jdbcType=VARCHAR},
+      </if>
+      <if test="filmContent != null" >
+        #{filmContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tvPlayContent != null" >
+        #{tvPlayContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tremblingContent != null" >
+        #{tremblingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="extreContent != null" >
+        #{extreContent,jdbcType=VARCHAR},
+      </if>
+      <if test="starHeadImg != null" >
+        #{starHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="starPortrait != null" >
+        #{starPortrait,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null" >
+        #{likeCount,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.starServer.entity.StarExample" resultType="java.lang.Integer" >
+    select count(*) from star
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update star
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.starName != null" >
+        star_name = #{record.starName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nameInitials != null" >
+        name_initials = #{record.nameInitials,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filmContent != null" >
+        film_content = #{record.filmContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tvPlayContent != null" >
+        tv_play_content = #{record.tvPlayContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tremblingContent != null" >
+        trembling_content = #{record.tremblingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extreContent != null" >
+        extre_content = #{record.extreContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.starHeadImg != null" >
+        star_head_img = #{record.starHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.starPortrait != null" >
+        star_portrait = #{record.starPortrait,jdbcType=VARCHAR},
+      </if>
+      <if test="record.likeCount != null" >
+        like_count = #{record.likeCount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update star
+    set id = #{record.id,jdbcType=INTEGER},
+      star_name = #{record.starName,jdbcType=VARCHAR},
+      name_initials = #{record.nameInitials,jdbcType=VARCHAR},
+      film_content = #{record.filmContent,jdbcType=VARCHAR},
+      tv_play_content = #{record.tvPlayContent,jdbcType=VARCHAR},
+      trembling_content = #{record.tremblingContent,jdbcType=VARCHAR},
+      extre_content = #{record.extreContent,jdbcType=VARCHAR},
+      star_head_img = #{record.starHeadImg,jdbcType=VARCHAR},
+      star_portrait = #{record.starPortrait,jdbcType=VARCHAR},
+      like_count = #{record.likeCount,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starServer.entity.Star" >
+    update star
+    <set >
+      <if test="starName != null" >
+        star_name = #{starName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameInitials != null" >
+        name_initials = #{nameInitials,jdbcType=VARCHAR},
+      </if>
+      <if test="filmContent != null" >
+        film_content = #{filmContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tvPlayContent != null" >
+        tv_play_content = #{tvPlayContent,jdbcType=VARCHAR},
+      </if>
+      <if test="tremblingContent != null" >
+        trembling_content = #{tremblingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="extreContent != null" >
+        extre_content = #{extreContent,jdbcType=VARCHAR},
+      </if>
+      <if test="starHeadImg != null" >
+        star_head_img = #{starHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="starPortrait != null" >
+        star_portrait = #{starPortrait,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCount != null" >
+        like_count = #{likeCount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starServer.entity.Star" >
+    update star
+    set star_name = #{starName,jdbcType=VARCHAR},
+      name_initials = #{nameInitials,jdbcType=VARCHAR},
+      film_content = #{filmContent,jdbcType=VARCHAR},
+      tv_play_content = #{tvPlayContent,jdbcType=VARCHAR},
+      trembling_content = #{tremblingContent,jdbcType=VARCHAR},
+      extre_content = #{extreContent,jdbcType=VARCHAR},
+      star_head_img = #{starHeadImg,jdbcType=VARCHAR},
+      star_portrait = #{starPortrait,jdbcType=VARCHAR},
+      like_count = #{likeCount,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

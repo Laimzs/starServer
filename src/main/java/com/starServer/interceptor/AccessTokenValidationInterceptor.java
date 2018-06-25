@@ -1,7 +1,6 @@
 package com.starServer.interceptor;
 
 
-import com.starServer.entity.User;
 import com.starServer.util.JedisUtil;
 import com.starServer.util.ObjectAndByte;
 import com.starServer.util.TokenConfig;

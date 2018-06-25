@@ -1,7 +1,7 @@
 package com.starServer.interceptor;
 
 import com.starServer.entity.Admin;
-import com.starServer.entity.ResponseData;
+import com.starServer.entity.response.ResponseData;
 import com.starServer.util.TokenConfig;
 import com.google.gson.Gson;
 import org.slf4j.Logger;

@@ -2,7 +2,7 @@ package com.starServer.controller.manage;
 
 
 import com.starServer.entity.Admin;
-import com.starServer.entity.ResponseData;
+import com.starServer.entity.response.ResponseData;
 import com.starServer.entity.vo.LoginResponseVo;
 import com.starServer.service.AdminService;
 import com.starServer.util.StringUtil;
@@ -23,11 +23,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by xmc1993 on 2017/5/15.AdminService
- */
 
-@Api(value = "Admin", description = "权限管理接口")
+@Api(value = "Admin", description = "后台管理员管理")
 @Controller
 @RequestMapping("/manage")
 public class AdminController {

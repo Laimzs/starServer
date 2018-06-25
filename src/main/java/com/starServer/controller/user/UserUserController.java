@@ -1,12 +1,13 @@
 package com.starServer.controller.user;
 
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
-import com.starServer.entity.ResponseData;
+import com.starServer.entity.response.ResponseData;
 import com.starServer.entity.User;
 import com.starServer.service.UserService;
 import com.starServer.util.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,55 +24,65 @@ import java.util.Date;
 /**
  * Created by zhangsong on 2018/1/1.
  */
-@Api(value = "Admin", description = "权限管理接口")
+@Api(value = "user", description = "用户接口")
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserUserController {
 
     @Autowired
     UserService userService;
-    @ApiOperation(value = "登录", notes = "")
+
+    @ApiOperation(value = "注册时获取验证码", notes = "")
     //获取手机验证码
     @RequestMapping(value = "/getVerifyCodeByMobile", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData<User> getVerifyCodeByMobile(@RequestParam("phone") String phone,
-                                                    HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ResponseData<User> responseData = new ResponseData();
+    public ResponseData<Boolean> getVerifyCodeByMobile(@ApiParam("手机号") @RequestParam("phone") String phone,
+                                                       HttpServletRequest request, HttpServletResponse response) throws Exception {
+        ResponseData<Boolean> responseData = new ResponseData<>();
 
         User user = userService.getUserByPhone(phone);
         if (user == null) {
             String code = RandCharsUtils.getRandomNumber(4);
             SendSmsResponse smsResponse = SmsUtils.sendMessage("SMS_126460392", phone, code);
             User user2 = new User();
-            user2.setPhone(phone);
+            user2.setMobile(phone);
             Util.setNewAccessToken(user2);
             user2.setVerifyCode(code);
-            user2.setName(phone);
+            user2.setNickName(phone);
             user2.setCreateTime(new Date());
             user2.setUpdateTime(new Date());
             user2.setValid(0);
-            userService.saveUser(user2);
-            responseData.jsonFill(1, null, user2);
+            int i = userService.saveUser(user2);
+            if (i == 1) {
+                responseData.jsonFill(1, null, true);
+            } else {
+                responseData.jsonFill(2, "获取失败", false);
+            }
         } else if (user.getValid().equals(0)) {
             String code = RandCharsUtils.getRandomNumber(4);
             SendSmsResponse smsResponse = SmsUtils.sendMessage("SMS_126460392", phone, code);
             Util.setNewAccessToken(user);
             user.setVerifyCode(code);
             user.setUpdateTime(new Date());
-            userService.updateUser(user);
-            responseData.jsonFill(1, null, user);
+            int i = userService.updateUser(user);
+            if (i == 1) {
+                responseData.jsonFill(1, null, true);
+            } else {
+                responseData.jsonFill(2, "获取失败", false);
+            }
         } else {
             responseData.jsonFill(2, "该手机已注册", null);
         }
         return responseData;
     }
 
-    //验证验证码是否成功
-    @RequestMapping(value = "/confirmationVerifyCode", method = {RequestMethod.POST})
+    @ApiOperation(value = "注册", notes = "")
+    @RequestMapping(value = "/register", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData<Boolean> getVerifyCodeByMobile(@RequestParam("phone") String phone,
-                                                       @RequestParam("code") String code,
-                                                       HttpServletRequest request, HttpServletResponse response) {
+    public ResponseData<Boolean> register(@ApiParam("手机号") @RequestParam("phone") String phone,
+                                          @ApiParam("验证码") @RequestParam("code") String code,
+                                          @ApiParam("密码") @RequestParam("password") String password,
+                                          HttpServletRequest request, HttpServletResponse response) {
 
         ResponseData responseData = new ResponseData();
         User user = userService.getUserByPhone(phone);
@@ -92,7 +103,7 @@ public class UserController {
         return responseData;
     }
 
-    //设置密码填写信息
+/*    //设置密码填写信息
     @RequestMapping(value = "/fillInInformation", method = {RequestMethod.POST})
     @ResponseBody
     public ResponseData<Boolean> fillInInformation(@RequestParam("phone") String phone,
@@ -116,18 +127,19 @@ public class UserController {
         }
         responseData.jsonFill(2, "用户不存在", false);
         return responseData;
-    }
+    }*/
 
     //登录
-    @RequestMapping(value = "/login", method = {RequestMethod.POST})
+    @ApiOperation(value = "登录接口", notes = "参数返回的string是token")
+    @RequestMapping(value = "/phoneLogin", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData<String> login(@RequestParam("phone") String phone,
-                                      @RequestParam("passWord") String passWord,
-                                      HttpServletRequest request, HttpServletResponse response) {
+    public ResponseData<String> phoneLogin(@ApiParam("手机号") @RequestParam("phone") String phone,
+                                           @ApiParam("密码") @RequestParam("passWord") String passWord,
+                                           HttpServletRequest request, HttpServletResponse response) {
         ResponseData responseData = new ResponseData();
         User user = userService.getUserByPhone(phone);
         if (user != null) {
-            if (passWord.equals(user.getPassWord())) {
+            if (passWord.equals(user.getPassword())) {
                 Util.setNewAccessToken(user);
 
                 //登录信息写入缓存
@@ -157,50 +169,57 @@ public class UserController {
 
 
     //修改密码
+    @ApiOperation(value = "修改密码", notes = "")
     @RequestMapping(value = "/updatePassword", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData updatePassword(@RequestParam("phone") String phone,
-                                       @RequestParam("code") String code,
-                                       @RequestParam("passWord") String passWord,
-                                       HttpServletRequest request, HttpServletResponse response) {
-        ResponseData responseData = new ResponseData<>();
+    public ResponseData<Boolean> updatePassword(@ApiParam("手机号") @RequestParam("phone") String phone,
+                                                @ApiParam("验证码") @RequestParam("code") String code,
+                                                @ApiParam("需要修改成的密码") @RequestParam("passWord") String passWord,
+                                                HttpServletRequest request, HttpServletResponse response) {
+        ResponseData<Boolean> responseData = new ResponseData<>();
         User user = userService.getUserByPhone(phone);
         if (user == null) {
             responseData.setErrorMes("用户不存在");
             responseData.setStatus(2);
+            responseData.setObj(false);
             return responseData;
         }
         long dValue = System.currentTimeMillis() - user.getExpireTime().getTime();
         if (dValue <= 900000L) {
             if (user.getVerifyCode().equals(code)) {
                 user.setUpdateTime(new Date());
-                user.setPassWord(passWord);
+                user.setPassword(passWord);
                 int success = userService.updateUser(user);
                 if (success == 1) {
                     responseData.setStatus(1);
+                    responseData.setObj(true);
                     return responseData;
                 }
                 responseData.setStatus(2);
+                responseData.setObj(false);
                 responseData.setErrorMes("修改密码失败");
                 return responseData;
             }
             responseData.setStatus(2);
+            responseData.setObj(false);
             responseData.setErrorMes("验证码错误");
             return responseData;
         }
         responseData.setStatus(2);
+        responseData.setObj(false);
         responseData.setErrorMes("验证码超时");
         return responseData;
     }
 
     //获取用户信息
+    @ApiOperation(value = "获取用户信息", notes = "返回用户信息")
     @RequestMapping(value = "/getUserInformation", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData getUserInformation(HttpServletRequest request, HttpServletResponse response) {
+    public ResponseData<User> getUserInformation(HttpServletRequest request, HttpServletResponse response) {
         ResponseData responseData = new ResponseData();
         User user = (User) request.getAttribute(TokenConfig.DEFAULT_USERID_REQUEST_ATTRIBUTE_NAME);
         if (user == null) {
-            responseData.jsonFill(2, "请先登录", false);
+            responseData.jsonFill(2, "请先登录", null);
             return responseData;
         }
         //刷新下user信息
@@ -209,10 +228,10 @@ public class UserController {
         return responseData;
     }
 
-    //获取验证码修改密码
+    @ApiOperation(value = "获取验证码修改密码", notes = "")
     @RequestMapping(value = "/getForgetPasswordVerifyCode", method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData<Boolean> getForgetPasswordVerifyCode(@RequestParam("phone") String phone,
+    public ResponseData<Boolean> getForgetPasswordVerifyCode(@ApiParam("手机号") @RequestParam("phone") String phone,
                                                              HttpServletRequest request, HttpServletResponse response) throws Exception {
         ResponseData<Boolean> responseData = new ResponseData();
         User user = userService.getUserByPhone(phone);
