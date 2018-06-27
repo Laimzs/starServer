@@ -90,7 +90,7 @@ public class ManageUserController {
     @ApiOperation(value = "分页获取所有用户", notes = "")
     @RequestMapping(value = "/users", method = {RequestMethod.GET})
     @ResponseBody
-    public ResponseData<List<User>> getAllSoundCards(@ApiParam("page") @RequestParam Integer page,
+    public ResponseData<List<User>> getAllUsers(@ApiParam("page") @RequestParam Integer page,
                                                           @ApiParam("pageSize") @RequestParam Integer pageSize, HttpServletRequest request,
                                                           HttpServletResponse response) {
         ResponseData responseData = userService.getUserListByPage(page, pageSize);
