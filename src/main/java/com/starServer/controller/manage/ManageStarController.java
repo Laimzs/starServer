@@ -1,5 +1,6 @@
 package com.starServer.controller.manage;
 
+import com.google.gson.Gson;
 import com.starServer.entity.Star;
 import com.starServer.entity.response.ResponseData;
 import com.starServer.service.StarService;
@@ -41,11 +42,11 @@ public class ManageStarController {
             @ApiParam("明星id") @PathVariable(value = "id") Integer id,
             @ApiParam("明星名字") @RequestParam(value = "starName", required = false) String starName,
             @ApiParam("名字首字母（注意修改名字，也同时需要修改这个字段）") @RequestParam(value = "nameInitials", required = false) String nameInitials,
-            @ApiParam("参演电影") @RequestParam(value = "filmContent", required = false) String filmContent,
-            @ApiParam("参演电视剧") @RequestParam(value = "tvPlayContent", required = false) String tvPlayContent,
-            @ApiParam("抖音视频") @RequestParam(value = "tremblingContent", required = false) String tremblingContent,
+            @ApiParam("参演电影") @RequestParam(value = "filmContent", required = false) List<String> filmContent,
+            @ApiParam("参演电视剧") @RequestParam(value = "tvPlayContent", required = false) List<String> tvPlayContent,
+            @ApiParam("抖音视频") @RequestParam(value = "tremblingContent", required = false) List<String> tremblingContent,
             @ApiParam("明星头像") @RequestParam(value = "starHeadImg", required = false) String starHeadImg,
-            @ApiParam("明星写真") @RequestParam(value = "headImgUrl", required = false) String starPortrait,
+            @ApiParam("明星写真") @RequestParam(value = "starPortrait", required = false) List<String> starPortrait,
             HttpServletRequest request, HttpServletResponse response) {
         ResponseData<Boolean> responseData = new ResponseData<>();
         Star star = starService.getStarById(id);
@@ -61,16 +62,17 @@ public class ManageStarController {
             }
             star.setNameInitials(nameInitials);
         }
+        Gson gson =new Gson();
         if (filmContent != null)
-            star.setFilmContent(filmContent);
+            star.setFilmContent(gson.toJson(filmContent));
         if (tvPlayContent!= null)
-            star.setTvPlayContent(tvPlayContent);
+            star.setTvPlayContent(gson.toJson(tvPlayContent));
         if (tremblingContent != null)
-            star.setTremblingContent(tremblingContent);
+            star.setTremblingContent(gson.toJson(tremblingContent));
         if (starHeadImg != null)
             star.setStarHeadImg(starHeadImg);
         if (starPortrait != null)
-            star.setStarPortrait(starPortrait);
+            star.setStarPortrait(gson.toJson(starPortrait));
         int res = starService.updateStar(star);
         if (res == 1) {
             responseData.jsonFill(1, null, true);
@@ -87,21 +89,22 @@ public class ManageStarController {
     public ResponseData<Boolean> createStar(
             @ApiParam("明星名字") @RequestParam(value = "starName") String starName,
             @ApiParam("名字首字母（注意修改名字，也同时需要修改这个字段）") @RequestParam(value = "nameInitials") String nameInitials,
-            @ApiParam("参演电影") @RequestParam(value = "filmContent") String filmContent,
-            @ApiParam("参演电视剧") @RequestParam(value = "tvPlayContent") String tvPlayContent,
-            @ApiParam("抖音视频") @RequestParam(value = "tremblingContent") String tremblingContent,
+            @ApiParam("参演电影") @RequestParam(value = "filmContent") List<String> filmContent,
+            @ApiParam("参演电视剧") @RequestParam(value = "tvPlayContent") List<String> tvPlayContent,
+            @ApiParam("抖音视频") @RequestParam(value = "tremblingContent") List<String> tremblingContent,
             @ApiParam("明星头像") @RequestParam(value = "starHeadImg") String starHeadImg,
-            @ApiParam("明星写真") @RequestParam(value = "headImgUrl") String starPortrait,
+            @ApiParam("明星写真") @RequestParam(value = "starPortrait") List<String> starPortrait,
             HttpServletRequest request, HttpServletResponse response) {
         ResponseData<Boolean> responseData = new ResponseData<>();
         Star star = new Star();
         star.setStarName(starName);
         star.setNameInitials(nameInitials);
-        star.setFilmContent(filmContent);
-        star.setTvPlayContent(tvPlayContent);
-        star.setTremblingContent(tremblingContent);
+        Gson gson =new Gson();
+        star.setFilmContent(gson.toJson(filmContent));
+        star.setTvPlayContent(gson.toJson(tvPlayContent));
+        star.setTremblingContent(gson.toJson(tremblingContent));
         star.setStarHeadImg(starHeadImg);
-        star.setStarPortrait(starPortrait);
+        star.setStarPortrait(gson.toJson(starPortrait));
         int res = starService.updateStar(star);
         if (res == 1) {
             responseData.jsonFill(1, null, true);

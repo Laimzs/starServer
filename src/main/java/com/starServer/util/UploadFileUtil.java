@@ -15,10 +15,10 @@ public final class UploadFileUtil {
 //    public static String SOURCE_BASE_URL = "http://120.27.219.173/source";
 
 
-    public static String SOURCE_BASE_URL = "http://139.199.97.113/source";
+    public static String SOURCE_BASE_URL = "http://zs1996.cn/source";
 
     static {
-        String url = System.getenv().get("SOURCE_BASE_URL") != null ? System.getenv().get("SOURCE_BASE_URL") : "http://139.199.97.113/source";
+        String url = System.getenv().get("SOURCE_BASE_URL") != null ? System.getenv().get("SOURCE_BASE_URL") : "http://zs1996.cn/source";
         SOURCE_BASE_URL = url;
     }
 

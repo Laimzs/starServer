@@ -35,10 +35,10 @@ public class ManageUploadController {
     @RequestMapping(value = "/uploadStarPortrait", method = {RequestMethod.POST})
     @ResponseBody
     public ResponseData<UploadResVo> uploadStarPortrait(
-            @ApiParam("文件") @RequestParam(value = "icon") MultipartFile icon,
+            @ApiParam("文件") @RequestParam(value = "starPortrait") MultipartFile starPortrait,
             HttpServletRequest request, HttpServletResponse response) {
         ResponseData<UploadResVo> responseData = new ResponseData<>();
-        String url = uploadFile(icon, ICON_ROOT);
+        String url = uploadFile(starPortrait, ICON_ROOT);
         if (url == null) {
             responseData.jsonFill(2, "上传失败", null);
         } else {
@@ -79,10 +79,10 @@ public class ManageUploadController {
     @RequestMapping(value = "/uploadStarHeadImg", method = {RequestMethod.POST})
     @ResponseBody
     public ResponseData<UploadResVo> uploadStarHeadImg(
-            @ApiParam("文件") @RequestParam(value = "icon", required = true) MultipartFile icon,
+            @ApiParam("文件") @RequestParam(value = "headImg", required = true) MultipartFile headImg,
             HttpServletRequest request, HttpServletResponse response) {
         ResponseData<UploadResVo> responseData = new ResponseData<>();
-        String url = uploadFile(icon, HEADIMG_ROOT);
+        String url = uploadFile(headImg, HEADIMG_ROOT);
         if (url == null) {
             responseData.jsonFill(2, "上传失败", null);
         } else {
