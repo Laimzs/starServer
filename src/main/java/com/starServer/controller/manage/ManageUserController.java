@@ -4,7 +4,6 @@ import com.starServer.entity.User;
 import com.starServer.entity.response.BooleanResponse;
 import com.starServer.entity.response.ResponseData;
 import com.starServer.service.UserService;
-import com.starServer.util.Util;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -65,7 +64,7 @@ public class ManageUserController {
             return responseData;
         }
         if (nickname != null) user.setNickName(nickname);
-        if (password != null) user.setPassword(Util.getMd5(password));
+        if (password != null) user.setPassword(password);
         user.setUpdateTime(new Date());
         if (city != null)
             user.setCity(city);
