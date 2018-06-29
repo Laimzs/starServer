@@ -291,7 +291,7 @@
     where id=#{0} AND state=2
   </update>
 
-  <select id="getCommentsByStarId" resultType="cn.edu.nju.software.entity.Comment"
+  <select id="getCommentsByStarId" resultType="com.starServer.entity.Comment"
           parameterType="java.lang.Integer">
     SELECT
     `comment`.*
