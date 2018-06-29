@@ -1,24 +1,30 @@
 package com.starServer.entity;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiParam;
+
 import java.util.Date;
 
+@Api(value="评论实体类")
 public class Comment {
+    @ApiModelProperty(value="主键")
     private Integer id;
-
+    @ApiModelProperty(value="明星id")
     private Integer starId;
-
+    @ApiModelProperty(value="用户id")
     private Integer userId;
-
+    @ApiModelProperty(value="评论内容")
     private String content;
-
-    private Integer likeCount;
-
-    private Integer cream;
-
+    @ApiModelProperty(value="喜爱次数")
+    private Integer likeCount=0;
+    @ApiModelProperty(value="是否加精")
+    private Integer cream=0;
+    @ApiModelProperty(value="图片url")
     private String picUrls;
-
+    @ApiModelProperty(value="新建时间")
     private Date createTime;
-
+    @ApiModelProperty(value="状态码")
     private Integer state;
 
     public Integer getId() {

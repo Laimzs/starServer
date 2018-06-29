@@ -105,11 +105,11 @@ public class ManageStarController {
         star.setTremblingContent(gson.toJson(tremblingContent));
         star.setStarHeadImg(starHeadImg);
         star.setStarPortrait(gson.toJson(starPortrait));
-        int res = starService.updateStar(star);
+        int res = starService.saveStar(star);
         if (res == 1) {
             responseData.jsonFill(1, null, true);
         } else {
-            responseData.jsonFill(2, "更新失败", false);
+            responseData.jsonFill(2, "新增失败", false);
         }
         return responseData;
     }

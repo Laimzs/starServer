@@ -1,6 +1,7 @@
 package com.starServer.controller.manage;
 
 
+import com.google.gson.Gson;
 import com.starServer.entity.Comment;
 import com.starServer.entity.Star;
 import com.starServer.entity.response.ResponseData;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -79,13 +81,46 @@ public class ManageCommentController {
 
     }
 
-    @ApiOperation(value = "分页获取所有评论", notes = "")
+    @ApiOperation(value = "分页获取所有评论(增加明星id表示搜索)", notes = "")
     @RequestMapping(value = "/comments", method = {RequestMethod.GET})
     @ResponseBody
-    public ResponseData<List<Star>> getAllComments(@ApiParam("page") @RequestParam Integer page,
-                                               @ApiParam("pageSize") @RequestParam Integer pageSize, HttpServletRequest request,
-                                               HttpServletResponse response) {
-        ResponseData responseData = commentService.getComments(page, pageSize);
+    public ResponseData<List<Comment>> getAllComments(@ApiParam("page") @RequestParam Integer page,
+                                                    @ApiParam("pageSize") @RequestParam Integer pageSize,
+                                                   @ApiParam("明星id") @RequestParam Integer starId,
+                                                   HttpServletResponse response) {
+        ResponseData<List<Comment>> responseData=new ResponseData<>();
+        if (starId != null){
+            responseData = commentService.getCommentsByStarId(starId, page, pageSize);
+            return responseData;
+        }
+        responseData = commentService.getComments(page, pageSize);
+        return responseData;
+    }
+
+    @ApiOperation(value = "新增评论", notes = "")
+    @RequestMapping(value = "/comments", method = {RequestMethod.POST})
+    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseBody
+    public ResponseData<Boolean> createComments(@ApiParam("明星id") @RequestParam Integer starId,
+                                                      @ApiParam("用户id") @RequestParam Integer userId,
+                                                      @ApiParam("内容") @RequestParam String content,
+                                                      @ApiParam("评论图片url") @RequestParam(value = "picUrls",required = false) List<String> picUrls,
+                                                      HttpServletResponse response) {
+        ResponseData<Boolean> responseData=new ResponseData<>();
+        Comment comment=new Comment();
+        comment.setStarId(starId);
+        comment.setContent(content);
+        comment.setUserId(userId);
+        comment.setCreateTime(new Date());
+        if (picUrls !=null){
+            comment.setPicUrls(new Gson().toJson(picUrls));
+        }
+        Integer res = commentService.saveComment(comment);
+        if (res !=1){
+            responseData.jsonFill(2,"新增失败",false);
+        }else {
+            responseData.jsonFill(1,null,true);
+        }
         return responseData;
     }
 }
