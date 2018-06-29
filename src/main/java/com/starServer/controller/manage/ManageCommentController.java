@@ -3,7 +3,6 @@ package com.starServer.controller.manage;
 
 import com.google.gson.Gson;
 import com.starServer.entity.Comment;
-import com.starServer.entity.Star;
 import com.starServer.entity.response.ResponseData;
 import com.starServer.service.CommentService;
 import io.swagger.annotations.Api;
@@ -38,6 +37,15 @@ public class ManageCommentController {
                                                            @ApiParam("page") @RequestParam(value = "page") Integer page,
                                                            @ApiParam("pageSize") @RequestParam(value = "pageSize") Integer pageSize) {
         ResponseData<List<Comment>> responseData = commentService.getCommentsByStarId(starId, page, pageSize);
+        return responseData;
+    }
+
+    @ApiOperation("根据评论id获取评论")
+    @RequestMapping(value = "/comment/{id}", method = {RequestMethod.GET})
+    @ResponseBody
+    public ResponseData<Comment> getCommentsById(@ApiParam("评论Id") @PathVariable(value = "id") Integer id) {
+        ResponseData<Comment> responseData =new ResponseData<>();
+        responseData.jsonFill(1,null,commentService.getCommentById(id));
         return responseData;
     }
 

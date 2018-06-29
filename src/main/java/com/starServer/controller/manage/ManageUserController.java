@@ -43,6 +43,15 @@ public class ManageUserController {
         return responseData;
     }
 
+    @RequestMapping(value = "/user/{id}", method = {RequestMethod.GET})
+    @ResponseBody
+    @ApiOperation(value = "根据用户Id获取用户", notes = "")
+    public ResponseData<User> getUserById(@ApiParam("用户id") @PathVariable int id) {
+        ResponseData<User> responseData = new ResponseData<>();
+        responseData.jsonFill(1,null,userService.getUserById(id));
+        return responseData;
+    }
+
     @ApiOperation(value = "更新用户信息", notes = "")
     @RequestMapping(value = "/user/{id}", method = {RequestMethod.POST})
     @ResponseBody

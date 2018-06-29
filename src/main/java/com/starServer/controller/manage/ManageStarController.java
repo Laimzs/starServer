@@ -34,6 +34,15 @@ public class ManageStarController {
         starService.deleteStar(id);
     }
 
+    @RequestMapping(value = "/star/{id}", method = {RequestMethod.GET})
+    @ResponseBody
+    @ApiOperation(value = "根据明星Id获取明星", notes = "")
+    public ResponseData<Star> getStarById(@ApiParam("id") @PathVariable int id) {
+        ResponseData<Star> responseData=new ResponseData<>();
+        responseData.jsonFill(1,null,starService.getStarById(id));
+        return responseData;
+    }
+
     @ApiOperation(value = "更新明星信息", notes = "")
     @RequestMapping(value = "/star/{id}", method = {RequestMethod.POST})
     @ResponseBody

@@ -42,6 +42,13 @@ public class CommentServiceImpl implements CommentService {
         return commentMapper.deleteByPrimaryKey(id);
     }
 
+    @Override
+    public Comment getCommentById(int id) {
+        return commentMapper.selectByPrimaryKey(id);
+    }
+
+
+
 /*    @Override
     public Boolean newLike(int id, int userId) {
         //先进行点赞记录

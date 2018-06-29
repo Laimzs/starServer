@@ -14,6 +14,7 @@ public interface CommentService {
     boolean deleteCream(int id);
     Integer saveComment(Comment comment);
     Integer deleteComment(int id);
+    Comment getCommentById(int id);
 /*    Boolean newLike(int id, int userId);
     Boolean deleteLike(int id, int userId);
 
