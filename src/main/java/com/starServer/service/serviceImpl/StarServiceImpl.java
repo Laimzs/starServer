@@ -24,8 +24,8 @@ public class StarServiceImpl implements StarService {
     @Override
     public ResponseData<List<Star>> getStarListByPage(int page, int pageSize) {
         ResponseData<List<Star>> responseData=new ResponseData<>();
-        PageHelper.startPage(page,pageSize);
         StarExample starExample=new StarExample();
+        PageHelper.startPage(page,pageSize);
         List<Star> starList=starMapper.selectByExample(starExample);
         PageInfo<Star> pageInfo=new PageInfo<>(starList);
         responseData.setCount((int) pageInfo.getTotal());

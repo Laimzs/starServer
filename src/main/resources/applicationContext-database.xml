@@ -43,11 +43,11 @@
                 <value>classpath*:com/starServer/dao/*.xml</value>
             </list>
         </property>
-        <!--        <property name="plugins">
+<property name="plugins">
 		    <array>
 		      <bean class="com.github.pagehelper.PageInterceptor">
 		        <property name="properties">
-		          &lt;!&ndash;使用下面的方式配置参数，一行配置一个 &ndash;&gt;
+		          <!--&lt;!&ndash;使用下面的方式配置参数，一行配置一个 &ndash;&gt;-->
 		          <value>
 		          helperDialect=mysql
                   reasonable=true
@@ -57,7 +57,7 @@
 		        </property>
 		      </bean>
 		    </array>
-  		</property>-->
+  		</property>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"

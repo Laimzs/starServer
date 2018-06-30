@@ -72,7 +72,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public ResponseData<List<Comment>> getComments(int page, int pageSize) {
-        PageHelper.startPage(page+1, pageSize);
+        PageHelper.startPage(page, pageSize);
         ResponseData<List<Comment>> responseData=new ResponseData<>();
         CommentExample commentExample = new CommentExample();
         List<Comment> commentList = commentMapper.selectByExample(commentExample);
@@ -98,7 +98,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public ResponseData<List<Comment>> getCommentsByStarId(int starId, int page, int pageSize) {
-        PageHelper.startPage(page+1, pageSize);
+        PageHelper.startPage(page, pageSize);
         ResponseData<List<Comment>> responseData=new ResponseData<>();
         List<Comment> commentList = commentMapper.getCommentsByStarId(starId);
         PageInfo<Comment> pageInfo=new PageInfo<>(commentList);
