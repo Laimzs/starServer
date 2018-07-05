@@ -15,7 +15,7 @@ public class InitImage {
 
     private Date updateTime;
 
-    private Integer valid;
+    private Integer valid =1;
 
     private String advertisementUrl;
 

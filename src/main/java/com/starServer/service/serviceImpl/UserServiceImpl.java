@@ -79,4 +79,18 @@ public class UserServiceImpl implements UserService {
         }
         return booleanResponse;
     }
+
+    @Override
+    public ResponseData<List<User>> getAllCancelUsers(int page, int pageSize) {
+        ResponseData<List<User>> responseData=new ResponseData<>();
+        PageHelper.startPage(page,pageSize);
+        UserExample userExample=new UserExample();
+        UserExample.Criteria criteria=userExample.createCriteria();
+        criteria.andValidEqualTo(2);
+        List<User> userList=userMapper.selectByExample(userExample);
+        PageInfo<User> pageInfo=new PageInfo<>(userList);
+        responseData.setCount((int) pageInfo.getTotal());
+        responseData.jsonFill(1,null,userList);
+        return responseData;
+    }
 }

@@ -105,4 +105,14 @@ public class ManageUserController {
         return responseData;
     }
 
+    @ApiOperation(value = "获取所有注销用户", notes = "")
+    @RequestMapping(value = "/cancelUsers", method = {RequestMethod.GET})
+    @ResponseBody
+    public ResponseData<List<User>> getAllCancelUsers(@ApiParam("page") @RequestParam Integer page,
+                                                @ApiParam("pageSize") @RequestParam Integer pageSize, HttpServletRequest request,
+                                                HttpServletResponse response) {
+        ResponseData responseData = userService.getAllCancelUsers(page, pageSize);
+        return responseData;
+    }
+
 }

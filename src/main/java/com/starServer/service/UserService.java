@@ -16,4 +16,6 @@ public interface UserService {
     User getUserById(Integer id);
     int updateUser(User user);
     BooleanResponse deleteUser(Integer id);
+    ResponseData<List<User>>  getAllCancelUsers(int page,int pageSize);
+
 }
