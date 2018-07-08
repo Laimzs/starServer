@@ -83,7 +83,7 @@ public class ManageInitImgController {
     public ResponseData<Boolean> createInitImage(
             @ApiParam("开屏页名字") @RequestParam(value = "imgName") String imgName,
             @ApiParam("开屏页Url") @RequestParam(value = "imgUrl") String imgUrl,
-            @ApiParam("是否显示") @RequestParam(value = "isShow")  Integer  isShow,
+            @ApiParam("是否显示") @RequestParam(value = "isShow")  Integer isShow,
             @ApiParam("广告点击跳转") @RequestParam(value = "advertisementUrl") String advertisementUrl) {
         ResponseData<Boolean> responseData = new ResponseData<>();
         InitImage initImage = new InitImage();

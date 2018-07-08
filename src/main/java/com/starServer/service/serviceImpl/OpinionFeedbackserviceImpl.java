@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.starServer.dao.OpinionFeedbackMapper;
 import com.starServer.entity.OpinionFeedback;
+import com.starServer.entity.OpinionFeedbackExample;
 import com.starServer.entity.response.ResponseData;
 import com.starServer.service.OpinionFeedbackservice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class OpinionFeedbackserviceImpl implements OpinionFeedbackservice {
     public ResponseData<List<OpinionFeedback>> getOpinionsByPage(Integer page, Integer pageSize) {
         ResponseData<List<OpinionFeedback>> responseData = new ResponseData<>();
         PageHelper.startPage(page, pageSize);
-
-        List<OpinionFeedback> list = opinionFeedbackMapper.getOpinionsWithUserName();
+        OpinionFeedbackExample opinionFeedbackExample=new OpinionFeedbackExample();
+        List<OpinionFeedback> list = opinionFeedbackMapper.selectByExample(opinionFeedbackExample);
         PageInfo<OpinionFeedback> pageInfo = new PageInfo<>(list);
         int count = (int) pageInfo.getTotal();
         responseData.setCount(count);
